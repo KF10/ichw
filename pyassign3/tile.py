@@ -80,13 +80,14 @@ def main():
     result = tile(m, n, a, b, (m*n)/(a*b))
     print('铺法的总数：', len(result))
     print('所有的铺法：')
+    
     for i in result:
         print(i)
         
     t = turtle.Turtle()
     t.speed(0)
     wn = turtle.Screen()
-    wn.setworldcoordinates(-1, n+1, m+1, -1)
+    wn.setworldcoordinates(-1, max(m,n)+1, max(m,n)+1, -1)
     num = tkinter.simpledialog.askinteger('Select plan', 'Input number of 0 - {0}'
                                           .format(len(result)-1))
     sel = result[num]
